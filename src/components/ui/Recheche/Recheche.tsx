@@ -2,7 +2,10 @@ import {View, Text, TextInput, Alert} from 'react-native';
 import React, {useState, useEffect} from 'react';
 
 import styles from './Recheche.styles';
-interface IRechercheProps {}
+interface IRechercheProps {
+  value: string;
+  onFindValueChange: Function;
+}
 const Recheche: React.FC<IRechercheProps> = props => {
   const [inputValue, setInputValue] = useState('');
   useEffect(() => {
@@ -14,9 +17,9 @@ const Recheche: React.FC<IRechercheProps> = props => {
       <TextInput
         placeholder="saisie de recherche"
         onChangeText={t => {
-          setInputValue(t);
-          console.log(inputValue);
+          props.onFindValueChange(t);
         }}
+        value={props.value}
       />
       <Text style={{backgroundColor: 'skyblue', color: 'tomato'}}>
         Recheche
