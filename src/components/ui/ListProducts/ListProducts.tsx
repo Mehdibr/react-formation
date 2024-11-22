@@ -2,12 +2,12 @@ import {View, Text, TouchableHighlight} from 'react-native';
 import React from 'react';
 import styles from './ListProducts.styles';
 import {IProduct} from '../../../interfaces/Iproduct';
-
-interface IListProductProps {
+interface IListProductsProps {
   produit: IProduct;
   onProductPressed: Function;
 }
-const ListProducts: React.FC<IListProductProps> = props => {
+
+const ListProducts: React.FC<IListProductsProps> = props => {
   return (
     <TouchableHighlight
       style={styles.ListProducts}

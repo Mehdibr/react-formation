@@ -6,26 +6,25 @@ interface IRechercheProps {
   value: string;
   onFindValueChange: Function;
 }
-const Recheche: React.FC<IRechercheProps> = props => {
-  const [inputValue, setInputValue] = useState('');
-  useEffect(() => {
-    Alert.alert('Nouvelle lettre', inputValue);
-  }, [inputValue]);
 
+const Recherche: React.FC<IRechercheProps> = props => {
+  // useEffect(() => {
+  //    //Alert.alert('Nouvelle lettre saisie', inputValue);
+  // },[inputValue]);
   return (
-    <View style={styles.Recheche}>
+    <View style={styles.Recherche}>
       <TextInput
-        placeholder="saisie de recherche"
+        placeholder="Saisie de recheche"
         onChangeText={t => {
           props.onFindValueChange(t);
         }}
         value={props.value}
       />
       <Text style={{backgroundColor: 'skyblue', color: 'tomato'}}>
-        Recheche
+        {props.value}
       </Text>
     </View>
   );
 };
 
-export default Recheche;
+export default Recherche;
